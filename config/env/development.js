@@ -17,8 +17,26 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
+  models: {
+    connection: 'MongodbServer',
+    migrate: 'alter'
+  },
+
+  /***************************************************************************
+  *                                                                          *
+  * MongoDB is the leading NoSQL database.                                   *
+  * user creation: http://qiita.com/y-hara/items/83a86655bba48dc8b140        *
+  *                                                                          *
+  ***************************************************************************/
+  connections: {
+    MongodbServer: {
+      adapter: 'sails-mongo',
+      host: 'localhost',
+      port: 27017,
+      // user: 'username',
+      // password: 'password',
+      database: 'sails-dev'
+    }
+  }
 
 };
